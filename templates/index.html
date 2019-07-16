@@ -1,0 +1,87 @@
+{%extends 'base.html'%}
+{% load static %}
+{%block title%} deepMus | {%endblock%}
+
+{%block content%}
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="hero-center">
+                <img src="{% static 'img/big-logo.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="about" class="about-section">
+        <div class="overlay"></div>
+        <!-- card section -->
+        <div class="card-section">
+            <div class="container">
+                <div class="row">
+                    <!-- single card -->
+                    {% for tech in techs %}
+                        <div class="col-md-4 col-sm-6">
+                            <div class="lab-card">
+                                <div class="icon">
+                                    <i class="flaticon-023-flask"></i>
+                                </div>
+                                <h2>{{ tech.title }}</h2>
+                                <p class="text-justify">{{ tech.text }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="about-contant text-justify">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get in Touch in <span> deepMus </span> and discover the music world</h2>
+                </div>
+                <div class="row">
+                    {% for content in contents %}
+                        <div class="col-md-6">
+                            <p>{{ content.text }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="text-center mt60">
+                    <a href="" class="site-btn">Browse</a>
+                </div>
+                <div class="intro-video">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <img src="{% static 'img/video.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="services-section spad">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-dark">برخی تعاریف تک خطی <span>deepmus</span></h2>
+            </div>
+            <div class="row">
+                {% for sticker in stickers %}
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service">
+                            <div class="icon">
+                                <i class="{{ sticker.icon }}"></i>
+                            </div>
+                            <div class="service-text">
+                                <h2>{{ sticker.title }}</h2>
+                                <p class="text-justify">{{ sticker.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="text-center">
+                <form action="{% url 'predict' %}" method="post">
+                    {% csrf_token %}
+                    <button class="site-btn" id="generate" type="submit">Try it Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{%endblock%}

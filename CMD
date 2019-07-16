@@ -1,0 +1,7 @@
+## Req
+
+Python 3.6
+	* Music21
+	* Keras
+	* Tensorflow
+	* h5py

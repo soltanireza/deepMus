@@ -1,0 +1,73 @@
+{% load static %}
+<!doctype html>
+<html dir="rtl" lang="fa">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'font/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'font/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bjax.min.css' %}">
+
+    <!-- Stylesheets -->
+
+    <title>{%block title%}{%endblock%}</title>
+</head>
+
+<body>
+<div id="preloder">
+    <div class="loader">
+        <img src="{% static 'img/big-logo.png' %}" alt="">
+        <h2>بارگذاری...</h2>
+    </div>
+</div>
+
+<header class="header-section">
+    <div class="logo">
+        <a href=""><img src="{% static 'img/logo.png' %}" alt="deepMus Logo"></a>
+    </div>
+    <!-- Navigation -->
+    <div class="responsive"><i class="fa fa-bars"></i></div>
+    <nav>
+        <ul class="menu-list">
+            <li {% if request.path == '/' %} class="active" {% endif %} ><a href="{% url 'index' %}">خانه</a></li>
+            <li {% if 'about' in request.path %} class="active" {% endif %} ><a href="{% url 'about' %}">درباره</a></li>
+            <li {% if 'samples' in request.path %} class="active" {% endif %} ><a href="{% url 'samples' %}">نمونه ها</a></li>
+            <li {% if 'question' in request.path %} class="active" {% endif %} ><a href="{% url 'question' %}">پرسشنامه</a></li>
+        </ul>
+    </nav>
+</header>
+
+{%block content%}{%endblock%}
+
+
+
+<!-- Footer section -->
+<footer class="footer-section">
+        <h2>2019 All rights reserved. Designed by <a href="https://pubstudio.ir" target="_blank">pub-er-cod</a></h2>
+</footer>
+<!-- Footer section end -->
+
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/circle-progress.min.js' %}"></script>
+<script src="{% static 'js/magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/map.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/bjax.min.js' %}"></script>
+</body>
+
+</html>

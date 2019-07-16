@@ -1,0 +1,29 @@
+.hero-section{
+  background: url("../img/bg_blured.jpg");
+  color: rgb(177, 177, 177);
+}
+
+.ui-color{
+  color: rgb(172, 172, 172);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: rgb(172, 172, 172);
+}
+
+
+.services-section{
+  /*background: #0c5460;*/
+}
+
+.qt{
+  background: url(../img/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-size: 100%;
+}
